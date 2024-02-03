@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!--=============== REMIXICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/2d.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+    <title>Tonie's Art</title>
+</head>
+
+<body> 
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav">
+            <a href="./index.html" class="nav__logo">
+                <img src="assets/img/favicon.png" alt="logo">
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="./about.html" class="nav__link">About</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href='./projects.html' class="nav__link">Projects</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="./blackjack.html" target="_blank" class="nav__link">Coded Demo</a>
+                    </li>
+                </ul>
+
+                <div class="nav__buttons">
+                    <!--<a href="#contact" class="nav__button-link">Contact</a>-->
+                    <a href="assets/img/tonieResume.pdf" class="nav__button-ghost">Resume</a>
+                </div>
+
+                <!-- Close button -->
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+
+            <!-- Toggle button -->
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="ri-menu-line"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main-art">
+        <div class="headline">
+            <img src="./assets/img/arts-background.svg" alt="restore app banner" class="projects-banner" />
+            <!--<div class="inner">
+                        <h1>Restore</h1>
+                        <p>Passion Project</p>
+                    </div>-->
+        </div>
+
+        <section class="projects-overview">
+
+            <h2>Below are my personal paintings that I did for fun!</h2>
+            <p>I am bubbling with excitement to unveil my upcoming 3D art and share it with everyone soon!</p>
+        </section>
+
+
+        <div class="gallery">
+            <div class="image-container">
+                <img src="./assets/img/square-art/drawingWoman.png" alt="Artwork 1">
+                <div class="overlay">
+                    <h3 class="caption">Elegance in Shadows</h3>
+                </div>
+            </div>
+        
+            <div class="image-container">
+                <img src="./assets/img/square-art/drawingGrams.png" alt="Artwork 1">
+                <div class="overlay">
+                    <h3 class="caption">Heartwarming Smile</h3>
+                </div>
+            </div>
+        
+            <div class="image-container">
+                <img src="./assets/img/square-art/drawingfeet.png" alt="Artwork 1">
+                <div class="overlay">
+                    <h3 class="caption">Sole Symphony</h3>
+                </div>
+            </div>
+        
+            <div class="image-container">
+                <img src="./assets/img/square-art/paintingCat.png" alt="Artwork 1">
+                <div class="overlay">
+                    <h3 class="caption">The Girl and her Whiskered Muse </h3>
+                </div>
+            </div>
+        
+            <div class="image-container">
+                <img src="./assets/img/square-art/paintingCafe.png" alt="Artwork 1">
+                <div class="overlay">
+                    <h3 class="caption">Sip & Stride</h3>
+                </div>
+            </div>
+ 
+            <div class="image-container">
+                <img src="./assets/img/square-art/stillLife.png" alt="Artwork 1">
+                <div class="overlay">
+                    <h3 class="caption">Caffeine Companion</h3>
+                </div>
+            </div>
+        
+            <div class="image-container">
+                <img src="./assets/img/square-art/paintingAd.png" alt="Artwork 1">
+                <div class="overlay">
+                    <h3 class="caption">Design Challenge: Ad Campaign</h3>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="modal" id="myModal">
+            <span class="close" id="closeModal">&times;</span>
+            <img class="modal-content" id="modalImage">
+            <span class="prev" id="prevArrow">&#10094;</span>
+            <span class="next" id="nextArrow">&#10095;</span>
+        </div>
+
+    </main>
+
+    <!--Footer-->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer__columns">
+                <div class="footer__col">
+                    <h3 class="footer__col-title">
+                        <img src="assets/img/Tonie__white-logo.svg" alt="footer logo" class="footer__logo">
+                        </i> <span></span>
+                    </h3>
+    
+                    <nav class="footer__nav">
+                        <ul class="footer__nav-list">
+    
+                            <li class="footer__nav-item">
+                                <a href="./index.html" class="footer__nav-link">
+                                    Home
+                                </a>
+                            </li>
+    
+                            <li class="footer__nav-item">
+                                <a href="./about.html" class="footer__nav-link">
+                                    About
+                                </a>
+                            </li>
+    
+                            <li class="footer__nav-item">
+                                <a href="./projects.html" class="footer__nav-link">
+                                    Projects
+                                </a>
+                            </li>
+    
+                            <li class="footer__nav-item">
+                                <a href="" class="footer__nav-link">
+    
+                                </a>
+                            </li>
+    
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer__col">
+                    <h3 class="footer__col-title">
+                        <i data-feather="share-2"></i> <span>Socials</span>
+                    </h3>
+                    <nav class="footer__nav">
+                        <ul class="footer__nav-list">
+                            <li class="footer__nav-item">
+                                <a href="https://github.com/tonielearnscode" class="footer__nav-link">
+                                    <i data-feather="youtube"></i><span>Github</span>
+                                </a>
+                            </li>
+                            <li class="footer__nav-item">
+                                <a href="https://www.linkedin.com/in/tonie-b-b8739789/" class="footer__nav-link">
+                                    <i data-feather="facebook"></i><span>LinkedIn</span>
+    
+                                </a>
+                            </li>
+                            <li class="footer__nav-item">
+                                <a href="https://www.instagram.com/a_breheny/?hl=en" class="footer__nav-link">
+                                    <i data-feather="instagram"></i><span>Instagram</span>
+    
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer__col">
+                    <h3 class="footer__col-title">
+                        <i data-feather="send"></i> <span>FAQ</span>
+                    </h3>
+                    <nav class="footer__nav">
+                        <ul class="footer__nav-list">
+                            <li class="footer__nav-item">
+                                <a href="mailto:abreheny96@gmail.com" class="footer__nav-link">
+                                    What are your hobbies? : <br>
+                                    Climbing, yoga, & tennis!
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/art.js"></script>
+
+</body>
+
+</html>

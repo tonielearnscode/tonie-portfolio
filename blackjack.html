@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack</title>
+    <link rel="stylesheet" href="assets/css/blackjack.css">
+    <script src="./assets/js/blackjack.js"></script>
+</head>
+
+<body>
+
+    <main>
+
+        <section class="blackjackGrp">
+            <div class="blackjack">
+                <div class="blackjackGame">
+                    <div class="columnContainer">
+                        <div class="column">
+                            <h2 class="h2Text">Dealer: <span id="dealer-sum"></span></h2>
+                            <div id="dealer-cards">
+                                <img id="hidden" src="./assets/img/cards/BACK.png">
+                            </div>
+                        </div>
+            
+                        <div class="column">
+                            <h2 class="h2Text"> You: <span id="your-sum"></span></h2>
+                            <div id="your-cards"></div>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+            </div>
+            
+            <div class="background__image"></div>
+            
+            <div class="buttonGroup">
+                <button id="hit">Hit</button>
+                <button id="stay">Stay</button>
+                <button id="restart" onClick="restart()">Restart</button>
+                <h1 id="results"></h1>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>

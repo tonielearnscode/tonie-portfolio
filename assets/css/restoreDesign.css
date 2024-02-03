@@ -1,0 +1,1079 @@
+/*=============== GOOGLE FONTS ================*/
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Oswald:wght@200;300;400;500;600;700&family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@100;300;400;500;700;900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&family=Spectral:wght@200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Poppins:wght@400;500;700&display=swap");
+  
+   
+/*=============== VARIABLES CSS ===============*/
+:root {
+    --header-height: 3.5rem;
+
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --first-color: hsl(195, 100%, 30%);
+    --gradient-color: linear-gradient(90deg,
+            hsl(210, 55%, 20%),
+            hsl(192, 62%, 25%));
+    --title-color: hsl(210, 52%, 20%);
+    --text-color: hsl(210, 24%, 15%);
+    --white-color: #fff;
+    --body-color: hsl(210, 55%, 85%);
+
+    --section1-bg-color: #ffffff;
+    --section2-bg-color: #FFD2B0;
+    --section3-bg-color: #384364;
+    --section4-bg-color: #cccccc;
+    --section5-bg-color: #333333;
+
+ 
+
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: "Poppins", sans-serif;
+    --second-font: "Lora", serif;
+    --biggest-font-size: 2.25rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+
+    /*========== Font weight ==========*/
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1024px) {
+    :root {
+        --biggest-font-size: 4rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+    }
+}
+
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+
+    margin-inline: 1.5rem;
+}
+
+.main {
+    overflow: hidden; /* For animation */
+}
+
+/*=============== HEADER & NAV ===============*/
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--body-color);
+    z-index: var(--z-fixed);
+}
+
+.nav {
+    position: relative;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav.scrolled {
+    background: var(--body-color);
+}
+
+.nav__logo {
+    width: 36px;
+    margin: 10px;
+}
+
+.nav__toggle,
+.nav__close {
+    display: inline-flex;
+    font-size: 1.25rem;
+    color: var(--title-color);
+    cursor: pointer;
+    margin: 10px;
+}
+
+/* Navigation for mobile devices */
+@media screen and (max-width: 1023px) {
+    .nav__menu {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        background-color: var(--body-color);
+        width: 100%;
+        box-shadow: 0 1px 16px hsla(210, 55%, 24%, .1);
+        padding-block: 3.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: 2.5rem;
+        transition: top .4s;
+    }
+}
+
+.nav__list {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    row-gap: 2rem;
+}
+
+.nav__link {
+    color: var(--title-color);
+    transition: color .3s;
+}
+
+.nav__link:hover {
+    color: var(--first-color);
+}
+
+.nav__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: .75rem;
+}
+
+.nav__button-link,
+.nav__button-ghost {
+    display: inline-block;
+    color: var(--title-color);
+}
+
+.nav__button-ghost {
+    background-color: hsla(0, 0%, 100%, .3);
+    padding: 1rem 2.5rem;
+    border: 2px solid var(--title-color);
+    border-radius: .75rem;
+}
+
+.nav__close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+}
+
+/* Show menu */
+.show-menu {
+    top: 0;
+}
+
+/* Change background header */
+.bg-header {
+    box-shadow: 0 1px 16px hsla(210, 55%, 24%, .12);
+}
+
+
+/*=============== BREAKPOINTS ===============*/
+
+/* For large devices */
+@media screen and (min-width: 1023px) {
+    .nav {
+        height: calc(var(--header-height) + 2rem);
+        column-gap: 4rem;
+    }
+
+    .nav__toggle,
+    .nav__close {
+        display: none;
+    }
+
+    .nav__menu {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav__list {
+        flex-direction: row;
+        column-gap: 5rem;
+    }
+
+    .nav__buttons {
+        flex-direction: row;
+        column-gap: 3rem;
+        padding-right: 20px;
+    }
+
+    .nav__logo {
+        width: 48px;
+        padding-left: 20px;
+    }
+}
+
+@media screen and (min-width: 1120px) {
+    .container {
+        margin-inline: auto;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    ::-webkit-scrollbar {
+        width: .6rem;
+        border-radius: .5rem;
+        background-color: hsl(220, 24%, 15%);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: hsl(220, 24%, 25%);
+        border-radius: .5rem;
+    }
+}
+
+/* For 2K resolutions (2048 x 1152) */
+@media screen and (min-width: 2048px) {
+    .container {
+        max-width: 1300px;
+    }
+}
+
+/*Footer*/
+
+.footer {
+    position: relative;
+    margin-top: 3rem;
+    padding: 3rem 0;
+    color: #fff;
+    background: #1D262F;
+    margin-top: auto;
+}
+
+.footer__columns {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.footer__col-title {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+}
+
+.footer__col-title *~span {
+    margin-left: 1rem;
+}
+
+.footer a {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer a *~span {
+    margin-left: 1rem;
+}
+
+.footer__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.footer__logo {
+    width: 80px;
+    height: auto;
+}
+
+/* ================================Restore=================================*/
+
+.main {
+    overflow: hidden;
+    /* For animation */
+}
+
+/* General styles and layout */
+.restore {
+    position: relative;
+}
+
+/*===========================================Section 1========================================================*/
+
+.banner {
+    position: relative;
+    overflow: hidden;
+    background-color: #232221;
+    margin-top: var(--header-height);
+    height: auto;
+}
+
+.banner-content {
+    text-align: center;
+}
+
+.svg-text {
+    margin-top: 2%;
+    z-index: 2;
+}
+
+.banner-image {
+    margin-top: -10%;
+}
+
+.svg-text img,
+.banner-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ====================================================Section 2==============================================================*/
+
+.restore__container-2 {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: #333333;
+}
+
+.restore__content {
+    position: relative;
+    z-index: 2;
+}
+
+.restore__data {
+    display: grid;
+    max-width: 700px;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.restore__subtitle {
+    font-size: var(--small-font-size);
+    color: var(--section2-bg-color);
+    letter-spacing: 3px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.restore__subtitle,
+.restore__title,
+.restore__description {
+    margin: 0 auto;
+    /* Center each child element within .restore__data */
+    max-width: 100%;
+    padding-top: 10px;
+    padding-bottom: auto;
+}
+
+.h3_subtitle-alternative {
+    text-align: center;
+}
+
+.h2_title-alternative {
+    font-family: 'Inter', sans-serif;
+    font-size: 30px;
+    color: var(--section4-bg-color);
+    text-align: center;
+}
+
+.p__description {
+    color: var(--section4-bg-color);
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+}
+
+.emphasize {
+    font-style: italic;
+}
+
+.wireframe__container {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 3rem;
+    justify-content: center;
+    align-items: center;
+    background-color: #333333;
+}
+
+.wireframe__description {
+    color: var(--section4-bg-color);
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+    text-align: center;
+    width:90%;
+    margin: 0 auto;
+}
+
+
+/* ===================================================Section 3=======================================================*/
+.restore__container-3 {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--section3-bg-color);
+}
+
+.restore__columns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.two-column {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 84%;
+}
+
+.left-h3,
+.right-h3 {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    font-size: 24px;
+    line-height: 2.5;
+    color:var(--section4-bg-color);
+}
+
+.de-emphasize {
+    font-weight: 300;
+}
+
+/* ===================================================Section 4=======================================================*/
+
+.restore__container-4 {
+    position: relative;
+    padding-top: 2rem;
+    height: auto;
+    width: 100%;
+    margin: 0;
+    background-color: #ECF0F1;
+}
+
+.restore__content-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin-top: 3rem;
+}
+
+.two-column-container{
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+}
+
+.video-column,
+.text-column{
+    flex:1;
+}
+
+.restore__text {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.h1-left {
+    padding-top: 2%;
+}
+
+.p-left {
+    padding-top: 1rem;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wireframeImage-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 47%;
+}
+
+.image-containerAlt,
+.video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 4rem;
+}
+
+.image-content,
+.video-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+img,
+video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+#image-overlay,
+#video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 5rem;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: auto;
+    z-index: 2;
+}
+
+.modal-content {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    display: block;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.prev,
+.next {
+    font-size: 2rem;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* ===================================================Section 8=======================================================*/
+.restore__container-7 {
+    height: auto;
+    width: 100%;
+    margin: 0;
+    background-color: #ECF0F1;
+}
+
+.image-container {
+    text-align: center;
+}
+
+.image-content {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.image-content img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.personaProfile {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.comparativeAnalysis {
+    margin-top: 1rem;
+}
+/* ===================================================Section 9=======================================================*/
+
+.restore__container-5 {
+    padding-top: 5px;
+    height: auto;
+    width: 100%;
+    margin: 0;
+    background-color: #ECF0F1;
+}
+
+.h2_title-dark {
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+
+.column-painPoints {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* Align items to the top of each column */
+    padding-top: 4%;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+.security-paragraph,
+.privacy-paragraph,
+.databackup-paragraph {
+    flex: 1;
+    /* Make all columns equally sized */
+    padding: 10px;
+    /* Add some padding for spacing */
+}
+
+.h1-left,
+.p-left,
+.bold-painPoint {
+    color: #384364;
+}
+
+.bullet-list {
+
+    list-style-type: disc;
+    /* You can change this to 'circle', 'square', or 'none' as needed */
+    margin-left: 0%;
+    /* Adjust the margin as needed */
+    margin-top: 0%;
+    color: #384364;
+}
+
+/* Style for list items */
+.bulleted-list li {
+    margin: 5px 0;
+    /* Adjust the margin as needed */
+}
+
+.bold-text,
+.bold-text-alt {
+    font-weight: bold;
+}
+
+ul {
+    padding-left: 20px;
+    /* Add some indentation for the list items */
+    margin: 0;
+    /* Remove default margin for the list */
+}
+
+
+/* ===================================================WIREFRAMES=======================================================*/
+
+.wireframe__description-alt {
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.prototypes__group {
+    display: flex;
+    justify-content: center;
+}
+
+.prototypes__group img {
+    max-width: 10%;
+    margin-right: 20px;
+}
+
+.strong {
+    font-weight: 650;
+    color: #384364;
+}
+
+.final-list {
+
+    list-style-type: disc;
+    /* You can change this to 'circle', 'square', or 'none' as needed */
+    margin-top: 0%;
+    color: #384364;
+}
+
+/* Style for list items */
+.final-list li {
+    margin: 5px 0;
+    /* Adjust the margin as needed */
+}
+
+.cta-container {
+    text-align: center;
+    margin-top: 2rem;
+    /* Adjust margin as needed */
+}
+
+.cta-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1e385e;
+    /* Change color as needed */
+    color: #fff;
+    /* Change color as needed */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-link:hover {
+    background-color: #12213b;
+    /* Change color as needed */
+}
+ 
+/*=============================================================*/
+@media screen and (max-width:1023px) {
+    .nav__logo {
+        padding-top: 14px;
+    }
+
+    .banner-image {
+        margin-bottom: -3%;
+    }
+
+    .restore__container-4 {
+        padding-top: 1%;
+    }
+
+    .restore__content-4 {
+        padding-top: 1rem;
+    }
+
+    .image-containerAlt{
+        margin: 0 auto;
+    }
+
+    .image-content img {
+        height: auto;
+        margin-top: 2%;
+    }
+
+    .video-content {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .video-container{
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .restore__text {
+        width: 90%;
+    }
+
+
+    .h1-left {
+        padding-top: 2%;
+        margin: 0 auto;
+        font-size: x-large;
+        width: 60%;
+    }
+
+    .p-left {
+        font-size: medium;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+}
+
+@media screen and (max-width:800px) {
+    .nav__logo {
+        padding-top: 14px;
+    }
+
+    .banner-image {
+        margin-bottom: -3%;
+    }
+
+    .restore__columns {
+        display: block;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .two-column {
+        display: block;
+        width: 100%;
+    }
+
+    .restore__container-4 {
+        padding: 0%;
+    }
+
+    .restore__content-4 {
+        display: block;
+        margin: 0;
+    }
+
+    .two-column,
+    .two-column-container {
+        display: block;
+        width: 100%;
+    }
+
+    .h1-left {
+        padding-top: 2%;
+        margin: 0 auto;
+        font-size: large;
+        width: 60%;
+    }
+
+    .p-left{
+        font-size: small;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .video-container {
+        width: 80%;
+        margin-right: 0;
+        margin: 0 auto;
+        padding-top: 1%;
+    }
+
+    .image-containerAlt {
+        display: block;
+        margin-right: 0rem;
+    }
+
+    .comparativeAnalysis {
+        margin-top: 0%;
+    }
+
+    .image-content {
+        display: block;
+    }
+
+    .image-content img {
+        height: auto;
+        margin-bottom: 0rem;
+    }
+
+}
+
+@media screen and (max-width:400px) {
+    .final-list{
+        font-size: small;
+    }
+
+    .column-painPoints{
+        display: block;
+        text-align: center;
+    }
+
+    .prototypes__group {
+        display: block;
+    }
+
+    .nav__logo {
+        padding-top: 14px;
+    }
+
+    .restore__data {
+        color: #ffffff;
+    }
+
+    .svg-text {
+        margin-top: 4%;
+        z-index: 2;
+    }
+
+    .banner-image img{
+        margin-bottom: 0%;
+    }
+    
+    .restore__columns {
+        display: block;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .two-column {
+        display: block;
+    }
+
+    .p__description,
+    .h3_subtitle-alternative {
+        font-size: small;
+    }
+
+    .h2_title-alternative {
+        font-size: medium;
+    }
+
+    .p__description {
+        width: 100%;
+    }
+
+    .wireframe__description,
+    .wireframe__description-alt {
+        font-size: small;
+    }
+
+    .wireframe__description-alt {
+        color: #384364;
+    }
+
+    .left-h3,
+    .right-h3 {
+       font-size: small; 
+    }
+
+    .restore__container-4 {
+        padding: 0%;
+    }
+
+    .restore__content-4 {
+        display:block;
+        margin: 0;
+    }
+
+    .two-column,
+    .two-column-container {
+        display: block;
+        width: 100%;
+    }
+
+    .video-column {
+        flex-direction: column;
+    }
+
+    .video-container {
+        width: 100%;
+    }
+
+    .image-containerAlt{
+        display: block;
+        margin-right: 0rem;
+    }
+
+    .comparativeAnalysis{
+        margin-top: 0%;
+    }
+
+    .image-content{
+        display: block;
+    }
+
+    .image-content img {
+        height: auto;
+        margin-bottom: 0rem;
+    }
+
+    .analysis-list{
+        color: #384364;
+        font-size: small;
+    }
+
+    .bullet-list {
+        font-size: small;
+    }
+
+    .restore__text {
+        padding-top: 1%;
+    }
+
+    .h1-left {
+        padding: 0;
+        margin: 0 auto;
+        
+    }
+
+    .h1-left {
+        text-align: center;
+        font-size: medium;
+    }
+
+    .p-left  {
+        font-size: small;
+        text-align: center;
+        margin: 1%;
+    }
+
+    .restore__description {
+        padding-bottom: 1%;
+    }
+
+    .bulleted-list {
+        text-align: center;
+    }
+
+    ul {
+        padding-left: 0%;
+    }
+
+    .footer__col-title {
+        font-size: medium;
+    }
+
+    .footer__nav-link {
+        font-size: small;
+    }
+} 
